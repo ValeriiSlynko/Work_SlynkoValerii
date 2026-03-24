@@ -47,3 +47,5 @@ print("Hello students IT Step Academy")
 
 # Завдання 13
 # Надішліть наявний репозиторій до сайту GitHub
+
+print("Hello students IT Step Academy")
