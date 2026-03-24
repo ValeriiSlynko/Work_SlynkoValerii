@@ -7,6 +7,7 @@ print("Hello students IT Step Academy")
 # Частина 1
 
 # Зараз в Німеччині холодно!
+# Сьогодні по Україні гарна погода!
 
 #    ЗАВДАННЯ 2
 # Створіть папку з двома підпапками. У кожну папку додайте кілька файлів.
@@ -48,4 +49,4 @@ print("Hello students IT Step Academy")
 # Завдання 13
 # Надішліть наявний репозиторій до сайту GitHub
 
-print("Hello")
+print("Hello students IT Step Academy")
