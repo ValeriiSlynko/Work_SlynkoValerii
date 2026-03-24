@@ -1,7 +1,6 @@
 # Курс: AI+Python
 # Модуль 7. Кортежі, множини, словники
 # Тема: Кортежі. Частина 1
-from os.path import split
 
 # Завдання 1
 # Користувач вводить числа через кому. Збережіть їх у кортеж.
@@ -52,7 +51,7 @@ for index, value in enumerate(numbers):
 # Користувач вводить ім’я студента після чого отримує повідомлення, чи студент зареєстрований.
 # Програма закінчує роботу коли користувач введе порожній рядок.
 
-students = ("Valery", "Alyona", "Ivan", "Maria", "Sofia" )
+students = ("Valery", "Alyona", "Ivan", "Maria", "Sofia")
 
 while True:
     name_student = str(input("Введіть ім'я студента для перевірки: "))
@@ -84,7 +83,7 @@ movies = (
     "Joker",
     "Dune",
     "Oppenheimer",
-    "Barbie"
+    "Barbie",
 )
 
 film = str(input("Введіть назву фільму: "))
@@ -109,7 +108,8 @@ else:
 # Приклад: ("яблуко", "яблуко Сидоренко", "банан жовтий", "Яблуко")
 # Яблуко зустрічається 3 рази
 
-def count_fruit (fruits_tuple, word):
+
+def count_fruit(fruits_tuple, word):
     count = 0
     word = word.lower()
 
@@ -118,9 +118,10 @@ def count_fruit (fruits_tuple, word):
             count += 1
     return count
 
+
 fruits = ("яблуко", "яблуко Сидоренко", "банан жовтий", "Яблуко")
 
-result = count_fruit (fruits, "Яблуко")
+result = count_fruit(fruits, "Яблуко")
 print("Кількість входжень:", result)
 
 
@@ -131,6 +132,7 @@ print("Кількість входжень:", result)
 # одноцифрових – 3 шт.
 # двоцифрових – 5 шт.
 # трицифрових – 2 шт.
+
 
 def number_statistics(numbers):
     one_digit = 0
@@ -150,6 +152,7 @@ def number_statistics(numbers):
     print("Одноцифрових –", one_digit, "шт.")
     print("Двоцифрових –", two_digit, "шт.")
     print("Трицифрових –", three_digit, "шт.")
+
 
 # Завдання 6
 # Користувач вводить назви товарів через кому. Потрібно сформувати кортеж.

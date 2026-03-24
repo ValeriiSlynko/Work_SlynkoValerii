@@ -1,7 +1,6 @@
 # Курс: AI+Python
 # Модуль 7. Кортежі, множини, словники
 # Тема: Словники. Частина 4
-from sys import remote_exec
 
 #   Завдання 1
 # Є словник з курсами валют, де ключ – назва валюти, значення – курс до гривні.
@@ -36,11 +35,13 @@ def convert_currency() -> None:
         "UAH": 1.0,
         "PLN": 11.96,
         "GBP": 59.07,
-        "CNY": 6.43
+        "CNY": 6.43,
     }
 
     # ЗЧИТУВАННЯ ДАНИХ ВІД КОРИСТУВАЧА
-    from_currency = input("Вкажіть вихідну валюту (доступні USD, EUR, UAH, PLN, GBR, CNY) : ")
+    from_currency = input(
+        "Вкажіть вихідну валюту (доступні USD, EUR, UAH, PLN, GBR, CNY) : "
+    )
     amount = float(input("Сума конвертації: "))
     to_currency = input("Валюта в яку конвертуємо: ")
 
@@ -49,6 +50,7 @@ def convert_currency() -> None:
 
     # ВИВІД РЕЗУЛЬТАТУ
     print(f"{amount:.2f} {from_currency} = {result:.2f} {to_currency}")
+
 
 # ВИКЛИК ФУНКЦІЇ
 convert_currency()
@@ -80,19 +82,36 @@ def process_employees(office_workers: set, remote_workers: set) -> None:
     # 3. Обчислити відсоток:
 
     print("\n---Розбір працівників на офісних та віддалених---")
-# УСІ ПРАЦІВНИКИ
+    # УСІ ПРАЦІВНИКИ
     all_workers = office_workers | remote_workers
     print("Імена усіх працівників:", ", ".join(sorted(all_workers)))
 
-# ПРАЦІВНИКИ, ЯКІ ПРАЦЮЮТЬ І В ОФІСІ, І ВІДДАЛЕНО
+    # ПРАЦІВНИКИ, ЯКІ ПРАЦЮЮТЬ І В ОФІСІ, І ВІДДАЛЕНО
     both_group_workers = office_workers & remote_workers
-    print("Працівники, які працюють і в офісі, і віддалено:", ", ".join(sorted(both_group_workers)))
+    print(
+        "Працівники, які працюють і в офісі, і віддалено:",
+        ", ".join(sorted(both_group_workers)),
+    )
 
-# ВІДСОТОК ПРАЦІВНИКІВ, ЯКІ ПРАЦЮЮТЬ УДВОХ У ДВОХ РЕЖИМАХ
+    # ВІДСОТОК ПРАЦІВНИКІВ, ЯКІ ПРАЦЮЮТЬ УДВОХ У ДВОХ РЕЖИМАХ
     percent_office_remote = len(both_group_workers) / len(all_workers) * 100
-    print(f"Відсоток працівників які працюють в обох режимах: {percent_office_remote:.0f} %")
+    print(
+        f"Відсоток працівників які працюють в обох режимах: {percent_office_remote:.0f} %"
+    )
 
-office_workers = {"Валерій","Іван","Ігор","Сергій","Василь","Євген","Стас","Денис","Роман","Світлана"}
-remote_workers = {"Валерій","Іван","Альона","Марія","Софія","Роман"}
+
+office_workers = {
+    "Валерій",
+    "Іван",
+    "Ігор",
+    "Сергій",
+    "Василь",
+    "Євген",
+    "Стас",
+    "Денис",
+    "Роман",
+    "Світлана",
+}
+remote_workers = {"Валерій", "Іван", "Альона", "Марія", "Софія", "Роман"}
 
 process_employees(office_workers, remote_workers)

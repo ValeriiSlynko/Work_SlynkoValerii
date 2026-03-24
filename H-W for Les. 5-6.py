@@ -14,8 +14,8 @@ print(f"Добуток чисел: {a*b*c}")
 # ВИКОНАННЯ ЗАВДАННЯ через окрему формулу площі ромба по 2-м діагоналям
 d1 = float(input("Введіть діагональ d1: "))
 d2 = float(input("Введіть діагональ d2: "))
-area_of_rombus = (d1*d2)/2
-print(f"Площа ромба:", area_of_rombus)
+area_of_rombus = (d1 * d2) / 2
+print("Площа ромба:", area_of_rombus)
 
 # РІВЕНЬ 2 - Завдання 3
 # Користувач вводить з клавіатури три числа.
@@ -25,7 +25,7 @@ print(f"Площа ромба:", area_of_rombus)
 salary = float(input("Зарплата за місяць: "))
 credit = float(input("Сума місячного платежу за кредитом у банку: "))
 utilities = float(input("Заборгованість за комунальні послуги: "))
-print(f"Сума після всіх виплат: ", salary-credit-utilities)
+print("Сума після всіх виплат: ", salary - credit - utilities)
 
 # Завдання 4
 # Напишіть програму, яка обчислює вартість поїздки на автомобілі.
@@ -36,8 +36,8 @@ fuel = float(input("Витрата палива на 100 кілометрів: "
 price = float(input("Ціна за літр бензину: "))
 print(f"Вартість поїздки становить: {distance*(fuel/100)*price}")
 # або 2-м способом
-cost_of_the_trip = distance*(fuel/100)*price
-print(f"Вартість поїздки становить", cost_of_the_trip)
+cost_of_the_trip = distance * (fuel / 100) * price
+print("Вартість поїздки становить", cost_of_the_trip)
 
 # РІВЕНЬ 3 - Завдання 5
 # Користувач вводить загальну суму рахунку в ресторані та кількість осіб, які будуть ділити рахунок.
@@ -46,7 +46,7 @@ print(f"Вартість поїздки становить", cost_of_the_trip)
 summa_restorant = float(input("Загальна сума рахунку в ресторані: "))
 number_of_people = int(input("Кількість осіб: "))
 
-tips = summa_restorant * 15 / 100     # 15% чайових від загальної суми
+tips = summa_restorant * 15 / 100  # 15% чайових від загальної суми
 amount_tips = summa_restorant + tips  # загальна сума з чайовими
 
 print(f"Сума чайових (15% від загальної суми: {tips}")
@@ -62,7 +62,7 @@ car_rental_day = float(input("Вартість оренди авто за ден
 number_of_days = int(input("Кількість днів оренди: "))
 deposit_amount = float(input("Сума внесення застави: "))
 
-amount_rent = car_rental_day * number_of_days        # сума оренди БЕЗ застави
+amount_rent = car_rental_day * number_of_days  # сума оренди БЕЗ застави
 total_rental_deposit = amount_rent + deposit_amount  # сума оренди ІЗ заставою
 
 print(f"Загальна вартість оренди (із заставою): {total_rental_deposit}")

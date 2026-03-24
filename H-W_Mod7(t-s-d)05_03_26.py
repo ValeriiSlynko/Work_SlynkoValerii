@@ -19,11 +19,10 @@
 # Напишіть функцію main, яка організує роботу всієї
 # програми, а саме матиме такий функціонал: поповнити рахунок, зняти кошти, завершити роботу
 
-from typing import Dict
 
 # Тип для словника з даними банку:
 # ключ — ім'я клієнта (str), значення — баланс (float)
-BankData = Dict[str, float]
+BankData = dict[str, float]
 
 
 def deposit_money(bank_data: BankData) -> None:
@@ -57,6 +56,7 @@ def deposit_money(bank_data: BankData) -> None:
         bank_data[name] += amount
         print(f"Рахунок поповнено! Баланс {name}: {bank_data[name]}")
 
+
 def withdraw_money(bank_data: BankData) -> None:
     """
     Функція для зняття грошей з рахунку користувача.
@@ -85,10 +85,11 @@ def withdraw_money(bank_data: BankData) -> None:
     if name not in bank_data:
         print("Такого клієнта немає в словнику")
         return
-    if bank_data [name] <= amount:
+    if bank_data[name] <= amount:
         print("На Вашому рахунку не достатньо коштів")
-    bank_data [name] -= amount
+    bank_data[name] -= amount
     print(f"Зняття успішне! {name} Ваш баланс: {bank_data[name]}")
+
 
 def show_menu() -> None:
     """
@@ -104,6 +105,7 @@ def show_menu() -> None:
     print("1 - Поповнити рахунок")
     print("2 - Зняти кошти")
     print("3 - Завершити роботу")
+
 
 def main() -> None:
     """

@@ -67,6 +67,7 @@ def base_report(income: int, expenses: int, taxes: int) -> str:
     text = f"Дохід: {income}\nВитрати: {expenses}\nПодатки: {taxes}"
     return text
 
+
 @add_header("Податкова служба України")
 def tax_report(income: int, expenses: int, taxes: int) -> str:
     """
@@ -112,9 +113,9 @@ def main() -> None:
     print()
     print(stats_report(income, expenses, taxes))
 
+
 if __name__ == "__main__":
     main()
-
 
 
 #   Завдання 2
@@ -139,11 +140,13 @@ def audit(user_name: str):
                         від імені якого виконується дія
     :return: функція-декоратор
     """
+
     def decorator(func):
         """
         Безпосередній декоратор, який приймає функцію
         (критичну операцію) та повертає її обгорнуту версію.
         """
+
         def wrapper(data: str) -> None:
             """
             Обгортка для функції, яка виконує аудит.
@@ -185,7 +188,7 @@ def audit(user_name: str):
                 f"Параметри: {data}\n"
                 f"Час: {now}\n"
                 "-------------------------"
-                )
+            )
 
             # Виводимо :
             print(log_text)
@@ -269,6 +272,7 @@ def main() -> None:
     update_record(update_data)
     delete_record(delete_data)
 
+
 if __name__ == "__main__":
     main()
 
@@ -296,14 +300,15 @@ def rate_limit(max_calls: int, period_seconds: float, user_name: str):
     :param user_name: str - ім'я або логін користувача, для якого діє обмеження
     :return: функція-декоратор
     """
+
     def decorator(func):
         """
         Декоратор, який обгортає цільову функцію та додає до неї логіку
         перевірки обмеження частоти викликів.
         """
         # Локальні змінні замикання (closure), які зберігають стан:
-        calls_made: int = 0         # кількість викликів у поточному періоді
-        window_start: float = 0.0   # час початку поточного періоду
+        calls_made: int = 0  # кількість викликів у поточному періоді
+        window_start: float = 0.0  # час початку поточного періоду
 
         def wrapper() -> None:
             """

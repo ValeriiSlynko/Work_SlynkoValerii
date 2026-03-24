@@ -8,6 +8,7 @@
 
 import math
 
+
 def triangle_area(a: float, b: float, angle_deg: float) -> float:
     """
     Обчислюємо площу трикутника за формулою:
@@ -19,6 +20,7 @@ def triangle_area(a: float, b: float, angle_deg: float) -> float:
     area = 0.5 * a * b * math.sin(angle_rad)
     return area
 
+
 print("Площа трикутника = ", triangle_area(5, 6, 45))
 
 # ЗАВДАННЯ 3
@@ -26,11 +28,13 @@ print("Площа трикутника = ", triangle_area(5, 6, 45))
 # Див time.time()
 import time
 
+
 def calculate_sum():
     total = 0
     for i in range(1, 10_000_001):
         total += i
     return total
+
 
 start_time = time.time()
 
@@ -49,6 +53,7 @@ print("Час виконання:", end_time - start_time, "секунд")
 
 import datetime
 
+
 def calculate_age(birth_date_str: str) -> int:
     """
     Обчислює вік користувача в роках.
@@ -62,6 +67,7 @@ def calculate_age(birth_date_str: str) -> int:
     age = delta.days // 365  # приблизно
 
     return age
+
 
 user_input = input("Введіть дату народження (YYYY-MM-DD): ")
 print("Ваш вік:", calculate_age(user_input))

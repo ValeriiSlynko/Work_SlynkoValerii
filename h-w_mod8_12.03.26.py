@@ -7,21 +7,24 @@
 # Якщо пароль поганий, тобто менше 8 символів чи містить однакові символи то викликати виняток ValueError.
 # Написати код try … except який використовує дану функцію.
 
-def user_parol ():
-        # запитуємо пароль у користувача
+
+def user_parol():
+    # запитуємо пароль у користувача
     password = input("Введіть свій пароль: ")
 
-        # перевіряємо довжину
+    # перевіряємо довжину
     password_len = len(password)
     print(f"Довжина пароля = {password_len} символів")
 
-        # перевірка на повтори символів
+    # перевірка на повтори символів
     uniq_characters = set(password)
     print("Унікальні символи: ", uniq_characters)
 
-        # умова поганого пароля
+    # умова поганого пароля
     if password_len < 8 or len(uniq_characters) < password_len:
-        raise ValueError ("Пароль не може містити менше 8 символів або містити дублікати!")
+        raise ValueError(
+            "Пароль не може містити менше 8 символів або містити дублікати!"
+        )
         # повертаємо пароль - якщо все добре
     return password
 
@@ -43,10 +46,7 @@ except ValueError as err:
 
 
 # словник користувачів: логін -> пароль
-users = {
-    "Valerii": "12345678",
-    "Jorg": "qwerty123",
-    "Ivan": "password" }
+users = {"Valerii": "12345678", "Jorg": "qwerty123", "Ivan": "password"}
 
 print(f"\nДоступні логіни (для перевірки): {users}")  # debug
 
@@ -63,7 +63,7 @@ def check_login():
     # перевірка: чи є логін у словнику
     if login not in users:
         # якщо логіну немає — генеруємо виняток
-        raise ValueError ("Невірний логін!")
+        raise ValueError("Невірний логін!")
 
     # якщо логін є — дістаємо правильний пароль із словника
     correct_password = users[login]
@@ -71,7 +71,7 @@ def check_login():
 
     # перевірка пароля
     if password != correct_password:
-        raise ValueError ("Невірний пароль!")
+        raise ValueError("Невірний пароль!")
 
     # якщо все вірно — повертаємо, наприклад, логін
     return login

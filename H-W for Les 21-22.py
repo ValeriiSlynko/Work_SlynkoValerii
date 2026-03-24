@@ -5,8 +5,8 @@
 text = input("Введіть якийсь текст: ")
 symbols = input("Введіть набір символів: ")
 
-words = text.split()   # змінна з розбивкою на окремі слова
-correct_words = []     # накопичувач кількості слів без символів
+words = text.split()  # змінна з розбивкою на окремі слова
+correct_words = []  # накопичувач кількості слів без символів
 
 for word in words:
     ok = 1
@@ -23,7 +23,7 @@ print("Слова без зайвих символів: ", " ".join(correct_word
 # (перевертає текст на рівні слів, а не символів). Наприклад, "я люблю Python"
 # перетворюється на "Python люблю я"
 
-text = input("Введіть будь-який текст: ") # Я люблю Python
+text = input("Введіть будь-який текст: ")  # Я люблю Python
 words = text.split()
 words = words[::-1]
 new_reversed_text = " ".join(words)
@@ -59,4 +59,8 @@ print("Текст в перевернутому виді: ", new_reversed_text)
 import re
 
 line = input("Введіть новий рядок: ")
-print("OK - рядок валідний" if re.match(r'^[A-Za-z_][A-Za-z0-9_]{0,19}$', line) else "NO - рядок не валідний")
+print(
+    "OK - рядок валідний"
+    if re.match(r"^[A-Za-z_][A-Za-z0-9_]{0,19}$", line)
+    else "NO - рядок не валідний"
+)

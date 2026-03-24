@@ -18,7 +18,7 @@ numbers = input("Введіть числа через кому: ").split(",")
 # перетворюємо у множину
 numbers = set(numbers)
 # створюємо випадкову множину
-random_set = set(random.randint(1,50) for i in range(12))
+random_set = set(random.randint(1, 50) for i in range(12))
 print("\nВипадкові числа: ", random_set)
 
 # вивід наступної інформації:
@@ -44,14 +44,16 @@ print("\nУсі числа з обох множин: ", union_numbers)
 # Напишіть функцію, яка отримує список гостей (гості можуть повторюватись) та назву події.
 # Потрібно вивести запрошення для кожного гостя і лише один раз.
 
-def invite (guests: list, event_name: str) -> None:
-    unique_guests = set(guests)     # унікальні гості
+
+def invite(guests: list, event_name: str) -> None:
+    unique_guests = set(guests)  # унікальні гості
 
     for guest in unique_guests:
         print(f"{guest}, welcome on the '{event_name}'!")
 
-guests = ["Valerii", "Alyona", "Ivan", "Maria", "Sofia", "Valerii", "Alyona","Ivan"]
-invite (guests,"Happy Birthday")
+
+guests = ["Valerii", "Alyona", "Ivan", "Maria", "Sofia", "Valerii", "Alyona", "Ivan"]
+invite(guests, "Happy Birthday")
 
 
 # Завдання 3
@@ -60,6 +62,7 @@ invite (guests,"Happy Birthday")
 #  Товари, які можна купити разом
 #  Товари, які потрібні лише першій людині
 #  Товари, які потрібні лише другій людині
+
 
 def shopping(list1: list, list2: list) -> None:
     # переводимо у множину для унікальності
@@ -74,10 +77,11 @@ def shopping(list1: list, list2: list) -> None:
     print("Товари лише першої людини:", only_first)
     print("Товари лише другої людини:", only_second)
 
+
 person1 = ["молоко", "хліб", "сир", "яйця"]
 person2 = ["хліб", "масло", "сир", "кава"]
 
-shopping (person1, person2)
+shopping(person1, person2)
 
 # Завдання 4
 # Організатор конференції створив 3 списки учасників:
@@ -89,10 +93,11 @@ shopping (person1, person2)
 #  Імена тих, хто зареєструвався та оплатив участь
 #  Імена тих хто пройшов усі 3 етапи
 
-def conference (registered: list, paid: list, confirmed: list) -> None:
-    R = set(registered)     # зареєстровані
-    P = set(paid)       # оплатили
-    C = set(confirmed)   # підтвердили
+
+def conference(registered: list, paid: list, confirmed: list) -> None:
+    R = set(registered)  # зареєстровані
+    P = set(paid)  # оплатили
+    C = set(confirmed)  # підтвердили
 
     print("Зареєструвались, але не оплатили участь :", R - P)
     print("Підтвердили, але не зареєстровані: ", C - R)
@@ -100,11 +105,12 @@ def conference (registered: list, paid: list, confirmed: list) -> None:
     print("Зареєструвались і оплатили участь: ", R & P)
     print("Пройшли усі 3 етапи: ", R & P & C)
 
+
 registered = ["Валерій", "Альона", "Іван", "Марія", "Софія", "Ігор", "Світлана"]
 paid = ["Валерій", "Ігор", "Іван"]
 confirmed = ["Марія", "Софія", "Альона"]
 
-conference (registered, paid, confirmed)
+conference(registered, paid, confirmed)
 
 # Завдання 5
 # Менеджер організовує навчання для своїх співробітників, для чого розділив їх на 3 групи,
@@ -114,7 +120,10 @@ conference (registered, paid, confirmed)
 #  Чи не забули включити якогось співробітника(якщо так, то вивести імена всіх, про кого забули)
 #  Чи випадково немає співробітників, які опинились у двох групах(якщо так, то теж вивести повідомлення)
 
-def check_training_groups(group1: list, group2: list, group3: list, all_employees: list) -> None:
+
+def check_training_groups(
+    group1: list, group2: list, group3: list, all_employees: list
+) -> None:
     G1 = set(group1)
     G2 = set(group2)
     G3 = set(group3)
@@ -137,10 +146,11 @@ def check_training_groups(group1: list, group2: list, group3: list, all_employee
     else:
         print("Перетинів між групами немає.")
 
+
 all_employees = ["Валерій", "Альона", "Іван", "Марія", "Софія", "Ігор", "Світлана"]
 
 group1 = ["Валерій", "Альона"]
 group2 = ["Іван", "Марія"]
 group3 = ["Ігор", "Софія"]
 
-check_training_groups (group1, group2, group3, all_employees)
+check_training_groups(group1, group2, group3, all_employees)

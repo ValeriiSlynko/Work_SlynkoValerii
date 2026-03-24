@@ -8,7 +8,9 @@
 
 product_list = input("Введіть список товарів (через кому): ").split()
 
-product_list_1 = list(set(product_list))    # створено для роздільності введеного списку від унікального
+product_list_1 = list(
+    set(product_list)
+)  # створено для роздільності введеного списку від унікального
 
 print("\nСписок користувача без повторень назв товарів: ", product_list_1)
 
@@ -19,24 +21,31 @@ print("\nСписок користувача без повторень назв 
 #  Імена тих, хто отримав купон, але не скористався, також вивести їх кількість
 #  Імена шахраїв, які скористались знижкою, але магазин не давав їм купони
 
-def legitimate_scammers (received: list, used: list) -> None:
 
+def legitimate_scammers(received: list, used: list) -> None:
     # переводимо у множини для швидкого підрахунку
     set_received = set(received)
     set_used = set(used)
 
-    not_used = set_received - set_used      # знаходимо імена клієнтів хто тримав, але не скористався
-    scammers = set_used - set_received      # знаходимо імена шахраїв
+    not_used = (
+        set_received - set_used
+    )  # знаходимо імена клієнтів хто тримав, але не скористався
+    scammers = set_used - set_received  # знаходимо імена шахраїв
 
-    print("\nКлієнти, які отримали знижкові купони але не скористались: ",
-            ", ".join(not_used) or "Таких немає")
+    print(
+        "\nКлієнти, які отримали знижкові купони але не скористались: ",
+        ", ".join(not_used) or "Таких немає",
+    )
     print("Кількість таких клієнтів: ", len(not_used))
 
-    print("Імена шахраїв, які скористались знижкою, але магазин не давав їм купони: ",
-            ", ".join(scammers))
+    print(
+        "Імена шахраїв, які скористались знижкою, але магазин не давав їм купони: ",
+        ", ".join(scammers),
+    )
     print("Кількість шахраїв: ", len(scammers))
+
 
 received = ["Валерій", "Альона", "Іван", "Марія", "Софія"]
 used = ["Валентина", "Галя", "Степан"]
 
-legitimate_scammers (received,used)
+legitimate_scammers(received, used)

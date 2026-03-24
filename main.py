@@ -8,13 +8,13 @@
 #  datetime.timedelta.days
 
 # main.py
-import date_utils
 from date_utils import days_until_deadline
+
 
 def main():
     """
     Запитує дедлайн у користувача та виводить кількість днів до нього
-    :return: 
+    :return:
     """
     deadline_input = input("Введіть дату дедлайну (YYYY-MM-DD): ").strip()
 
@@ -29,6 +29,7 @@ def main():
 
     except ValueError:
         print("Не правильний формат дати! Введіть у форматі YYYY-MM-DD")
+
 
 if __name__ == "__main__":
     main()

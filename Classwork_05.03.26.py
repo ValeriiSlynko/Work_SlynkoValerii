@@ -1,14 +1,14 @@
 # Курс: AI+Python
 # Модуль 7. Кортежі, множини, словники
 # Тема: Словники. Частина 3
-from News import name_city
 
 
 # Завдання 1
 # Напишіть функцію, яка отримує 2 словника та об’єднує їх в один.
 # Якщо ключі співпадають то потрібно додати відповідні їм значення.
 
-def two_dicts(dict_1 :dict, dict_2 :dict) -> dict:
+
+def two_dicts(dict_1: dict, dict_2: dict) -> dict:
     result = dict_1.copy()
 
     for key, value in dict_2.items():
@@ -18,6 +18,7 @@ def two_dicts(dict_1 :dict, dict_2 :dict) -> dict:
             result[key] = value
 
     return result
+
 
 dict_1 = {"Молоко": 80, "Картопля": 20}
 dict_2 = {"Картопля": 25, "Апельсини": 70}
@@ -29,8 +30,8 @@ print(two_dicts(dict_1, dict_2))
 # Напишіть функцію, яка отримує словник та інвертує його, тобто повертає новий словник,
 # де ключі та значення змінені місцями.
 
-def invertor_dict(d):
 
+def invertor_dict(d):
     result = {}
 
     for key, value in d.items():
@@ -38,11 +39,8 @@ def invertor_dict(d):
 
     return result
 
-data = {
-    "Валерій": 1000,
-    "Ігор": 1500,
-    "Віктор": 2000
-}
+
+data = {"Валерій": 1000, "Ігор": 1500, "Віктор": 2000}
 print(invertor_dict(data))
 
 # Завдання 3
@@ -82,7 +80,6 @@ print("Загальна сума:", total)
 # Практичне завдання
 # значення в словнику будуть кількостями слів, чи
 # частотою(відсотком від загальної кількості).
-
 
 
 # Завдання 5

@@ -11,8 +11,8 @@
 
 import datetime
 
-def days_until_deadline (deadline_str: str) -> int:
 
+def days_until_deadline(deadline_str: str) -> int:
     # Опис документації щодо роботи даної функції
     """
     Обчислює кількість днів до дедлайну
@@ -20,7 +20,7 @@ def days_until_deadline (deadline_str: str) -> int:
     :param deadline: дата дедлайну форматі YYYY-MM-DD
     :return: повертає кількість днів до дедлайну (int)
     :raises ValueError: вводимо обробку якщо формат дати некоректний (try / except)
-    """ # docstring (документація рядка)
+    """  # docstring (документація рядка)
 
     # Перетворюємо рядок у дату
     deadline_date = datetime.date.fromisoformat(deadline_str)
@@ -31,7 +31,8 @@ def days_until_deadline (deadline_str: str) -> int:
     # Різниця часу між датами
     delta = deadline_date - today
 
-    return delta.days   # повертає
+    return delta.days  # повертає
+
 
 if __name__ == "__main__":
     test_date = "2026-03-10"

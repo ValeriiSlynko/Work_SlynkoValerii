@@ -13,15 +13,15 @@ hour = int(input("Час відправлення, год.: "))
 minute = int(input("Час відправлення, хв.: "))
 time_m = int(input("Тривалість дороги, хв.: "))
 
-start_minute = hour * 60 + minute           # початок руху у хвилинах
-all_minute = start_minute + time_m          # тривалість дороги у хвилинах
-arrival_min_in_day = all_minute % 1440      # кількість діб
-arrival_hour = arrival_min_in_day // 60     # прибуття у годинах
-arrival_minute = arrival_min_in_day % 60    # прибуття у хвилинах
+start_minute = hour * 60 + minute  # початок руху у хвилинах
+all_minute = start_minute + time_m  # тривалість дороги у хвилинах
+arrival_min_in_day = all_minute % 1440  # кількість діб
+arrival_hour = arrival_min_in_day // 60  # прибуття у годинах
+arrival_minute = arrival_min_in_day % 60  # прибуття у хвилинах
 
 full_day_in_road = time_m // 1440
-print (f"Прибуття: {arrival_hour}:{arrival_minute}")
-print (f"Діб пройшло: {full_day_in_road}")
+print(f"Прибуття: {arrival_hour}:{arrival_minute}")
+print(f"Діб пройшло: {full_day_in_road}")
 
 #    Завдання 2:
 # Умова:
@@ -32,13 +32,13 @@ print (f"Діб пройшло: {full_day_in_road}")
 # сформувати число з перших двох цифр і останніх двох цифр (наприклад 58 і 31)
 user = int(input("Введіть 4-значне число: "))
 x = user
-x1 = (x // 1000)
+x1 = x // 1000
 x2 = (x // 100) % 10
 x3 = (x // 10) % 10
 x4 = x % 10
-print("Вивід окремих цифр: ""\n",x1,"\n", x2,"\n", x3,"\n", x4)
+print("Вивід окремих цифр: " "\n", x1, "\n", x2, "\n", x3, "\n", x4)
 print("Сума цифр: ", x1 + x2 + x3 + x4)
-print(f"Формуємо число у зворотному порядку: {x4}{x3}{x2}{x1}" )
+print(f"Формуємо число у зворотному порядку: {x4}{x3}{x2}{x1}")
 print(f"Число з перших 2-х чисел: {x1}{x2}\nЧисло з останніх 2-х чисел: {x3}{x4}")
 
 #    Завдання 3:
@@ -50,23 +50,37 @@ print(f"Число з перших 2-х чисел: {x1}{x2}\nЧисло з ос
 # Вивести кількість кожного номіналу та підсумкову кількість усіх купюр/монет.
 
 uah = float(input("Введіть суму у гривнях: "))
-kop = int(round(uah*100))
+kop = int(round(uah * 100))
 
-h200 = kop // 20000; kop %= 20000
-h100 = kop // 10000; kop %= 10000
-h50 = kop // 5000; kop %= 5000
-h20 = kop // 2000; kop %= 2000
-h10 = kop // 1000; kop %= 1000
-h5 = kop // 500; kop %= 500
-h2 = kop // 200; kop %= 200
-h1 = kop // 100; kop %= 100
+h200 = kop // 20000
+kop %= 20000
+h100 = kop // 10000
+kop %= 10000
+h50 = kop // 5000
+kop %= 5000
+h20 = kop // 2000
+kop %= 2000
+h10 = kop // 1000
+kop %= 1000
+h5 = kop // 500
+kop %= 500
+h2 = kop // 200
+kop %= 200
+h1 = kop // 100
+kop %= 100
 
-k50 = kop // 50; kop %= 50
-k25 = kop // 25; kop %= 25
-k10 = kop // 10; kop %= 10
-k5 = kop // 5; kop %= 5
-k2 = kop // 2; kop %= 2
-k1 = kop // 1; kop %= 1
+k50 = kop // 50
+kop %= 50
+k25 = kop // 25
+kop %= 25
+k10 = kop // 10
+kop %= 10
+k5 = kop // 5
+kop %= 5
+k2 = kop // 2
+kop %= 2
+k1 = kop // 1
+kop %= 1
 
 print("Номінал 200грн: ", h200)
 print("Номінал 100грн: ", h100)
@@ -84,5 +98,4 @@ print("5 коп: ", k5)
 print("2 коп: ", k2)
 print("1 коп: ", k1)
 
-print("Кількість всіх купюр/монет: ", h200+h100+h50+h20)
-
+print("Кількість всіх купюр/монет: ", h200 + h100 + h50 + h20)

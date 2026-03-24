@@ -10,11 +10,13 @@
 # потрібно вивести результат.
 # Ця перевірка не повинна запускатись при імпорті в іншому файлі.
 
+
 def delete_punctuation(text: str) -> str:
     punctuation = ",.?!;:"
     for symbol in punctuation:
         text = text.replace(symbol, "")
     return text
+
 
 def count_vowels(text: str) -> int:
     vowels = "aeiouyаеєиіїоуюяAEIOUYАЕЄИІЇОУЮЯ"
@@ -23,6 +25,7 @@ def count_vowels(text: str) -> int:
         if ch in vowels:
             count += 1
     return count
+
 
 def is_palindrome(text: str) -> bool:
     cleaned = text.replace("поп ", "поп").lower()

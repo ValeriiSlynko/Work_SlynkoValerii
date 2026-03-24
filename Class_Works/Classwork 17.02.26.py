@@ -15,14 +15,14 @@ def get_greeting(name: str, age: int) -> str | None:
     :param name: str ім'я користувача
     :param age: int вік користувача
     :return: str фраза з привітанням
-    """ # docstring
+    """  # docstring
 
     # перевірки
     if age <= 0:
         print("[WARNING] Вік має бути дадатім")
-        return None # кінець функції
+        return None  # кінець функції
 
-    if name == '':
+    if name == "":
         print("[WARNING] Ім'я не може бути пустим")
         return None
 
@@ -53,8 +53,8 @@ def greet_users(users: list):
     """
 
     for user in users:
-        name = user[0] # name
-        age = user[1] # age
+        name = user[0]  # name
+        age = user[1]  # age
 
         greeting = get_greeting(name, age)
 
@@ -62,13 +62,8 @@ def greet_users(users: list):
         if greeting:  # не None
             print(greeting)
 
-users = [
-    ["John", 46],
-    ["Sophie", 35],
-    ["Mary", 31],
-    ["Mike", 28],
-    ["jhkhjk", -10]
-]
+
+users = [["John", 46], ["Sophie", 35], ["Mary", 31], ["Mike", 28], ["jhkhjk", -10]]
 greet_users(users)
 
 # Хрестики Нулики
@@ -95,13 +90,14 @@ greet_users(users)
 
 # main -- головна функція, організовує вся роботуґзапускає програму
 
-from typing import Literal, Optional
+from typing import Literal
 
 # Тип для символів на сітці
 CROSS = "X"
 ZERO = "O"
 Symbol = Literal["X", "O"]
 Cell = Literal["X", "O", " "]  # " " — порожня клітинка
+
 
 def create_grid(size: int = 3) -> list[list[Cell]]:
     """
@@ -119,9 +115,10 @@ def create_grid(size: int = 3) -> list[list[Cell]]:
         row: list[Cell] = []
         for j in range(size):
             row.append(" ")  # додаємо порожню клітинку
-        grid.append(row)     # додаємо рядок у сітку
+        grid.append(row)  # додаємо рядок у сітку
 
     return grid
+
 
 def print_grid(grid: list[list[Cell]]) -> None:
     """
@@ -150,11 +147,9 @@ def print_grid(grid: list[list[Cell]]) -> None:
         if i < size - 1:
             print("---+" * (size - 1) + "---")
 
+
 def add_symbol_to_grid(
-    grid: list[list[Cell]],
-    row: int,
-    col: int,
-    symbol: Symbol
+    grid: list[list[Cell]], row: int, col: int, symbol: Symbol
 ) -> bool:
     """
     Додає новий символ на сітку за вказаними координатами.
@@ -189,6 +184,7 @@ def add_symbol_to_grid(
     grid[row][col] = symbol
     return True
 
+
 def ask_user_move(player_name: str, grid: list[list[Cell]]) -> tuple[int, int]:
     """
     Запитує у користувача, куди поставити новий символ.
@@ -219,7 +215,7 @@ def ask_user_move(player_name: str, grid: list[list[Cell]]) -> tuple[int, int]:
 
             if 0 <= row < size and 0 <= col < size:
                 if grid[row][col] == " ":
-                    return row, col     # хід валідний
+                    return row, col  # хід валідний
                 else:
                     print("Ця клітинка вже зайнята!")
             else:
@@ -227,7 +223,8 @@ def ask_user_move(player_name: str, grid: list[list[Cell]]) -> tuple[int, int]:
         except ValueError:
             print("Введіть числа!")
 
-def check_winner(grid: list[list[Cell]]) -> Optional[Symbol]:
+
+def check_winner(grid: list[list[Cell]]) -> Symbol | None:
     """
     Перевіряє, чи є переможець на поточній сітці.
 
@@ -309,6 +306,3 @@ def main() -> None:
     """
     # TODO: реалізувати основний ігровий цикл за описаним алгоритмом.
     pass
-
-
-
