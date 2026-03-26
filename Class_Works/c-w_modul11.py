@@ -12,7 +12,7 @@ class Student:
         self.name = name
         self.age = age
 
-Student.student_info(name="Ахілес", age="40")
+Student(name="Ахілес", age="40")
 
 #   Завдання 2
 # Створіть список з 3-ма студентами, дані вводить користувач.
