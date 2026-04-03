@@ -1,7 +1,7 @@
 # Модуль 11. ООП
 # Тема: ООП. Частина 3
 
-# Завдання 1
+#   ЗАВДАННЯ 1
 # Створіть наступні класи:
 #  Rectangle – атрибути width, height
 #  Circle – атрибути radius
@@ -86,7 +86,7 @@ figures = []
 #     print(f"Периметр: {f.get_perimeter():.2f}")
 
 
-# Завдання 2
+#   ЗАВДАННЯ 2
 # Створіть наступні класи:
 #  Manager – атрибути name, base_salary
 #  Developer – атрибути name, base_salary, work_experience
@@ -154,36 +154,100 @@ def create_worker() -> Manager | Developer | Intern | None:
 workers = []
 
 # створюємо працівників в кількості - 3
-for _ in range(3):
-    worker = create_worker()
+# for _ in range(3):
+#     worker = create_worker()
+#
+#     if worker:
+#         workers.append(worker)
+#
+# for worker in workers:
+#     print(f"{worker.get_salary()}")
 
-    if worker:
-        workers.append(worker)
 
-for worker in workers:
-    print(f"{worker.get_salary()}")
-
-
-# Завдання 3
+#   ЗАВДАННЯ 3
 # Створіть наступні класи:
 #  Car – атрибути speed
 #  Bicycle – атрибути speed
 #  Boat – атрибути speed
-# Методи:
+#   Методи:
 #  move() – виводить повідомлення про рух
-# o Car – їде по шосе зі швидкістю
-# o Bicycle – їде по дорозі зі швидкістю
-# o Boat – пливе по воді зі швидкістю
-#  check_speed(speed) – перевіряє чи правильна швидкість,
-# якщо ні то в __init__ треба викикати ValueError з
-# відповідним повідомленням
-# o Car – від 20 до 200
-# o Bicycle – від 10 до 30
-# o Boat – від 0 до 50
+#   Car – їде по шосе зі швидкістю
+#   Bicycle – їде по дорозі зі швидкістю
+#   Boat – пливе по воді зі швидкістю
+#   check_speed(speed) – перевіряє чи правильна швидкість,
+# якщо ні, то в __init__ треба викикати ValueError з відповідним повідомленням
+#  - Car – від 20 до 200
+#  - Bicycle – від 10 до 30
+#  - Boat – від 0 до 50
 # Напишіть функцію create_vehicle() яка запитує у користувача тип транспорту та потрібні атрибути і повертає об’єкт.
-# Створіть декілька транспортних засобів, добавте їх у список
-# та для кожної викличте відповідні методи.
+# Створіть декілька транспортних засобів, добавте їх у список та для кожної викличте відповідні методи.
 
 class Car:
     def __init__(self, spead: float):
+        self.check_speed(spead)
         self.speed = spead
+
+    def check_speed(self, speed: float):
+        if speed < 20 or speed > 200:
+            raise ValueError ("Швидкість авто має бути в межах від 20 до 200 км/год")
+
+    def move(self):
+        print(f"Авто їде зі швидкістю {self.speed}")
+
+class Bicycle:
+    def __init__(self, speed: float):
+        self.check_speed(speed)
+        self.speed = speed
+
+    def check_speed(self, speed: float):
+        if speed < 10 or speed > 30:
+            raise ValueError ("Швидкість велосипеда має бути в межах від 10 до 30 км/год")
+
+    def move(self):
+        print(f"Велосипед їде по дорозі зі швидкістю {self.speed}")
+
+class Boat:
+    def __init__(self, speed: float):
+        self.check_speed(speed)
+        self.speed = speed
+
+    def check_speed(self, speed: float):
+        if speed < 0 or speed > 50:
+            raise ValueError ("Швидкість човна має бути в межах від 0 до 50 км/год")
+
+    def move(self):
+        print(f"Човен пливе по воді зі швидкістю {self.speed}")
+
+def create_vehicle() -> Car | Bicycle | Boat | None:
+    vehicle_type = input("Оберіть тип транспорту (Car/Bicycle/Boat): ").lower()
+
+    try:
+        speed = float (input("Швидкість транспорту: "))
+
+        if vehicle_type == "car":
+            return Car(speed)
+
+        elif vehicle_type == "bicycle":
+            return Bicycle(speed)
+
+        elif vehicle_type == "boat":
+            return Boat(speed)
+
+        else:
+            print("Невідомий тип транспорту!")
+            return None
+
+    except ValueError as Error:
+        print(f"Помилка: {Error}")
+        return None
+
+vehicles = []
+
+for _ in range(3):
+    vehicle = create_vehicle()
+
+    if vehicle:
+        vehicles.append(vehicle)
+
+for vehicle in vehicles:
+    vehicle.move()
