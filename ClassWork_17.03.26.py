@@ -1,6 +1,7 @@
 # Курс: AI+Python
 # Модуль 8. Файли. Винятки
 # Тема: Файли. Частина 2
+from os import replace
 
 # #    ЗАВДАННЯ 1
 # # Є текстовий файл. Виведіть кількість рядків та кількість символів в ньому
@@ -75,6 +76,14 @@ for word in words:
 #   ЗАВДАННЯ 5
 # Є текстовий файл. Замініть у ньому усі символи * на &, та навпаки.
 
+with open("text.txt", "r", encoding = "utf-8" ) as file:
+    text = file.read()
+    text = text.replace("*","$")
+    text = text.replace("&","*")
+    text = text.replace("$", "&")
+
+with open("text.txt", "w", encoding = "utf-8" ) as file:
+    file.write(text)
 
 
 #   ЗАВДАННЯ 6
