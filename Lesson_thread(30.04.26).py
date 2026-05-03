@@ -84,8 +84,11 @@ print(f"Середнє значення суми чисел = {result1['average'
 # Після чого запускається потік для пошуку цього слова у файлі.
 # Результат пошуку виведіть на екран.
 
+import threading
+import json
+
 filename = "file_fruits.json"
-word = input(f"Введіть слово для пошуку у файлі {filemame}: ")
+word = input(f"Введіть слово для пошуку у файлі {filename}: ")
 
 def search(word, result):
     with open("file_fruits.json", "r", encoding="utf-8") as file:
@@ -93,7 +96,7 @@ def search(word, result):
 
     counter = 0
 
-    for item in items
+    for item in items:
         if item == word:
             counter += 1
 
